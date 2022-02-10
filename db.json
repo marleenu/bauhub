@@ -1,0 +1,41 @@
+{
+  "list": [
+    {
+      "id": "1",
+      "name": "Hankedokumendid-5",
+      "type": "FOLDER",
+      "created": "2022-02-01 00:00:49.231+02",
+      "createdBy": "Anne Salat"
+    },
+    {
+      "test3": "test",
+      "id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Kontrollakt.pdf",
+      "type": "FILE",
+      "created": "2022-02-05 00:00:49.231+02",
+      "createdBy": "Projektijuht Mihkel-Oliver",
+      "version": "3"
+    },
+    {
+      "id": "4",
+      "name": "Allkirjastamiseks-3.asice",
+      "type": "CONTAINER",
+      "created": "2022-02-04 00:00:49.231+02",
+      "createdBy": "Anne Salat",
+      "status": "DECLINED",
+      "totalSigners": "4",
+      "signedBy": "1",
+      "version": "1"
+    },
+    {
+      "id": "5",
+      "name": "Hankedokumendid-6",
+      "type": "FOLDER",
+      "created": "2022-02-02 00:00:49.231+02",
+      "createdBy": "Anne Salat"
+    }
+  ]
+}

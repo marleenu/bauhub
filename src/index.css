@@ -16,15 +16,3 @@
 /*    monospace;*/
 /*}*/
 
-.container {
-  background-color: red;
-  color: white;
-}
-
-.container h1 {
-  color: green;
-}
-
-h1 {
-  color: violet;
-}

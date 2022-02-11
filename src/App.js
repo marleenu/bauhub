@@ -11,7 +11,15 @@ function App() {
     setData(result);
   }, []);
 
-  return <div>{data && <Table className="text-3xl font-bold underline" data={data} />}</div>;
+  return (
+    <div>
+      <ul className="flex-inline">
+        <li>Dokumendid</li>
+        <li>Hankedokumendid</li>
+      </ul>
+      {data && <Table data={data} />}
+    </div>
+  );
 }
 
 export default App;

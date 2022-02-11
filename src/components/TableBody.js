@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import TableRow from './TableRow';
 
 const TableBody = ({ data }) => {
@@ -6,7 +7,7 @@ const TableBody = ({ data }) => {
   const files = data.filter((item) => item.type === 'FILE');
 
   return (
-    <tbody>
+    <tbody className="divide-y divide-lightgray">
       <TableRow data={folders} />
       <TableRow data={containers} />
       <TableRow data={files} />

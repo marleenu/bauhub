@@ -3,9 +3,9 @@ import TableBody from './TableBody';
 
 const Table = ({ data }) => {
   return (
-    <table className="min-h-screen bg-gray-100 text-gray-900">
+    <table className="text-primary flex flex-col flex-nowrap">
       <TableHead />
-      <TableBody data={data} />
+      <TableBody className="text-base" data={data} />
     </table>
   );
 };

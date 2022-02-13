@@ -7,20 +7,17 @@ See on [Create React App](https://github.com/facebook/create-react-app) projekt.
 Klooni projekt gitist.
 
 Installi projekti kaustas Node'i dependencyd:
-### `npm install`.
+`npm install`.
 
 Käivita:
-### `npm start`
+`npm start`
 
 See skript käivitab projekti aadressil [http://localhost:3000](http://localhost:3000),
 samal ajal jooksutab json-serverit, mis serveerib mock-apit pordil 3333. Aadress: [http://localhost:3333/list](http://localhost:3333/list).
 
-Kui tahta jooksutada ainult projekti, siis tuleb jooksutada käsku:
+Kui tahta jooksutada ainult projekti, siis tuleb jooksutada käsku: `npm start 3000`.
 
-#### `npm start 3000`.
-
-Serverit üksi saab jooksutada käsuga :
-#### `npm server`.
+Serverit üksi saab jooksutada käsuga: `npm server`.
 
 ### Mock server
 

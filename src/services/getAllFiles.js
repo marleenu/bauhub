@@ -1,13 +1,36 @@
-const getAllFiles = async function (url) {
+function sleep(action) {
+  return new Promise((resolve) => {
+    setTimeout(() => resolve(action), 600);
+  });
+}
+
+export const getAllFiles = async function (url) {
   try {
-    const response = await fetch(url);
-    // if (!response.ok) {
-    //   throw new Error('I wrote this error');
-    // }
-    return response.json();
+    return await sleep(
+      fetch(url).then(function (response) {
+        if (!response.ok) {
+          throw new Error('Oops, there is an error');
+        }
+        return response.json();
+      })
+    );
   } catch (err) {
     console.error(err);
   }
 };
 
-export default getAllFiles;
+export const deleteFile = async function (url) {
+  try {
+    return await sleep(
+      fetch(url, { method: 'DELETE' }).then(function (response) {
+        console.log(response);
+        if (!response.ok) {
+          throw new Error('Oops, there is an error');
+        }
+        return response.json();
+      })
+    );
+  } catch (err) {
+    console.error(err);
+  }
+};

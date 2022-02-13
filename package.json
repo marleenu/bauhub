@@ -25,7 +25,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "server": "json-server --watch db.json --port 3333"
+    "server": "json-server --watch db.json --port 3333",
+    "start 3000": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [

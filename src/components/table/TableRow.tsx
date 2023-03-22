@@ -3,14 +3,10 @@ import { IFile } from '../../models/IFile';
 import { IFolder } from '../../models/IFolder';
 import { IContainer } from '../../models/IContainer';
 import { FileEntityType } from '../../models/FileEntityType';
-import ItemLogo from '../icons/ItemLogo';
-import ContainerStatusIndicator from '../ContainerStatusIndicator';
 import { classNames, formatDate } from '../../utils/utilities';
 import { Draggable } from 'react-beautiful-dnd';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEllipsis } from '@fortawesome/free-solid-svg-icons/faEllipsis';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical';
+import ContainerStatusIndicator from '../ContainerStatusIndicator';
+import ItemLogo from '../icons/ItemLogo';
 import DnDHandler from './DnDHandler';
 
 interface Props {
@@ -31,13 +27,14 @@ const TableRow: FC<Props> = ({ item, isSelected, handleCheckbox, index }) => {
             className={classNames(
               isSelected && 'bg-green-300',
               snapshot.isDragging && 'opacity-40',
-              'group peer peer-active:pointer-events-none'
+              'group peer relative peer-active:pointer-events-none'
             )}
             key={item.id}>
-            <td className="text-center relative w-1/12">
+            <td className="text-center  w-1/12">
               <DnDHandler {...provided.dragHandleProps} />
               <input
                 type="checkbox"
+                className="mx-2"
                 checked={isSelected}
                 onChange={() => {
                   return '';

@@ -9,7 +9,7 @@ const DnDHandler: FC = (props) => {
     <div
       {...props}
       className={classNames(
-        'right-14 mx-4 w-5 pb-4 pt-3 group/ellipsis z-0 top-0 h-full group-hover:opacity-100 text-center text-sm rounded absolute bg-gray-100 transition ease-in opacity-0'
+        'left-0 w-5 mr-2 group/ellipsis top-0 h-full group-hover:flex items-center justify-center text-center text-sm rounded absolute bg-gray-100 transition ease-in hidden'
       )}>
       <FontAwesomeIcon icon={faEllipsisVertical as IconProp} size="sm" />
     </div>

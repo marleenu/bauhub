@@ -1,5 +1,4 @@
-# Marleeni proovitöö
-
+# Random project
 See on [Create React App](https://github.com/facebook/create-react-app) projekt.
 
 ## Käivitamine

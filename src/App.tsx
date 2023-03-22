@@ -1,10 +1,10 @@
 import './index.css';
-import Table from './Components/table/Table';
+import Table from './components/table/Table';
 import React, { FC, useEffect, useState } from 'react';
 import { IFileEntity } from './models/IFileEntity';
 import { deleteFile, getAllFiles } from './api/fileApi';
-import Breadcrumbs from './Components/Breadcrumbs';
-import DeleteButton from './Components/DeleteButton';
+import Breadcrumbs from './components/Breadcrumbs';
+import DeleteButton from './components/DeleteButton';
 
 const App: FC = () => {
   const [documents, setDocuments] = useState<Array<IFileEntity>>([]);

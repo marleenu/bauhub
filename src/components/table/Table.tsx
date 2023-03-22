@@ -1,10 +1,10 @@
-import TableRow from './TableRow';
 import React, { Dispatch, FC, SetStateAction } from 'react';
 import { IFileEntity } from '../../models/IFileEntity';
-import TableHeader from './TableHeader';
 import { ITableHeaderArray } from '../../models/ITableHeaderArray';
-import TableRowSkeleton from './TableRowSkeleton';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import TableHeader from './TableHeader';
+import TableRow from './TableRow';
+import TableRowSkeleton from './TableRowSkeleton';
 
 interface Props {
   documents: Array<IFileEntity>;

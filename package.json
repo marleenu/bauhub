@@ -7,11 +7,11 @@
     "@fortawesome/free-regular-svg-icons": "^6.0.0",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
-    "@testing-library/jest-dom": "^5.16.2",
+    "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "concurrently": "^7.0.0",
-    "json-server": "^0.17.0",
+    "json-server": "^0.17.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -31,7 +31,18 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.tsx"
+        ],
+        "rules": {
+          "react-hooks/exhaustive-deps": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,13 +58,30 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.0",
+    "@types/node": "^18.15.5",
+    "@types/react": "^18.0.28",
+    "@types/react-beautiful-dnd": "^13.1.4",
+    "@types/react-dom": "^18.0.11",
+    "@typescript-eslint/parser": "^5.56.0",
     "autoprefixer": "^10.4.2",
-    "eslint": "^8.8.0",
+    "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
+    "flow-bin": "^0.42.0",
     "postcss": "^8.4.6",
     "prettier": "^2.5.1",
-    "tailwindcss": "^3.0.19"
+    "react-beautiful-dnd": "^13.1.1",
+    "tailwindcss": "^3.0.19",
+    "ts-standard": "^12.0.2",
+    "typescript": "^4.4.4"
+  },
+  "standard": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "flowtype"
+    ]
   }
 }

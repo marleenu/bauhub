@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './Components/App';
+import App from './App';
 
+// eslint-disable-next-line jest/require-hook
 ReactDOM.render(
   <React.StrictMode>
     <App />

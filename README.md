@@ -1,5 +1,6 @@
 # Random project
-[Create React App](https://github.com/facebook/create-react-app) project
+This is a [Create React App](https://github.com/facebook/create-react-app) project.
+It's the first home assignment I ever did, and later I refactored it and added Redux store and DnD handler to play around a bit. No emphasis has been put on the style/UX, this project is just a playground for myself. 
 
 ## Run
 

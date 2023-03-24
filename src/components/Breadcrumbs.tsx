@@ -7,10 +7,10 @@ const Breadcrumbs = () => {
   return (
     <div>
       <span className="mr-2 text-secondary hover:text-primary transition duration-900">
-        Dokumendid
+        Documents
       </span>
       <FontAwesomeIcon icon={faCaretRight as IconProp} />
-      <span className="ml-2 font-bold">Hankedokumendid</span>
+      <span className="ml-2 font-bold">Procurement documents</span>
     </div>
   );
 };

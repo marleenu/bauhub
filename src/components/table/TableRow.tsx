@@ -8,15 +8,19 @@ import { Draggable } from 'react-beautiful-dnd';
 import ContainerStatusIndicator from '../ContainerStatusIndicator';
 import ItemLogo from '../icons/ItemLogo';
 import DnDHandler from './DnDHandler';
+import { selectIsFileSelected, toggleSelected } from '../../slices/fileSlice';
+import { RootState } from '../../app/store';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
 interface Props {
   item: IFile | IFolder | IContainer;
-  isSelected: boolean;
-  handleCheckbox: any;
   index: number;
 }
 
-const TableRow: FC<Props> = ({ item, isSelected, handleCheckbox, index }) => {
+const TableRow: FC<Props> = ({ item, index }) => {
+  const isFileSelected = useAppSelector((state: RootState) => selectIsFileSelected(state, item.id));
+  const dispatch = useAppDispatch();
+
   return (
     <Draggable draggableId={item.id as string} index={index}>
       {(provided, snapshot) => {
@@ -25,35 +29,36 @@ const TableRow: FC<Props> = ({ item, isSelected, handleCheckbox, index }) => {
             {...provided.draggableProps}
             ref={provided.innerRef}
             className={classNames(
-              isSelected && 'bg-green-300',
+              isFileSelected ? 'bg-green-50' : 'hover:bg-gray-50',
               snapshot.isDragging && 'opacity-40',
-              'group peer relative peer-active:pointer-events-none'
+              'group peer relative peer-active:pointer-events-none transition ease-out duration-300'
             )}
             key={item.id}>
-            <td className="text-center  w-1/12">
+            <td className="text-right w-1/12">
               <DnDHandler {...provided.dragHandleProps} />
               <input
                 type="checkbox"
                 className="mx-2"
-                checked={isSelected}
-                onChange={() => {
-                  return '';
-                }}
+                checked={isFileSelected}
+                onChange={() => dispatch(toggleSelected(item.id))}
               />
             </td>
             <td className="w-1/12">
-              <ItemLogo item={item} isSelected={isSelected} />
+              <ItemLogo item={item} isSelected={isFileSelected} />
             </td>
             <td className="w-1/3"> {item.name} </td>
-            <td className="text-center">
+            <td className="w-1/6 text-center">
               {item.type === FileEntityType.CONTAINER && (
-                <ContainerStatusIndicator container={item as IContainer} isSelected={isSelected} />
+                <ContainerStatusIndicator
+                  container={item as IContainer}
+                  isSelected={isFileSelected}
+                />
               )}
             </td>
             <td className="text-center w-1/6"> {'version' in item && item.version} </td>
             <td className="w-1/6">
               <div>{formatDate(item.created)}</div>
-              <span>{item.createdBy}</span>
+              <span className="text-xs text-gray-500">{item.createdBy}</span>
             </td>
           </tr>
         );

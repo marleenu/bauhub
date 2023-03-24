@@ -13,25 +13,26 @@ interface Props {
   isSelected: boolean;
 }
 const ItemLogo: FC<Props> = ({ item, isSelected }) => {
-  let classes = 'flex items-center justify-center m-2 w-8 h-8 rounded-sm ';
+  let classes = 'flex select-none items-center justify-center m-2 w-8 h-8 rounded-full ';
   let content;
 
   switch (item.type) {
     case FileEntityType.FILE:
-      classes += ' border-red-mid bg-red-100 text-red-900 text-tiny';
+      classes += ' outline-red-700 bg-gradient-to-r from-red-300 to-rose-400 text-white text-xs';
       content = <span>PDF</span>;
       break;
     case FileEntityType.CONTAINER:
-      classes += ' border-blue-mid bg-blue-100 text-blue-900 text-tiny';
+      classes += ' outline-blue-800 bg-gradient-to-r from-sky-300 to-indigo-500 text-white text-xs';
       content = <span>ASICE</span>;
       break;
     case FileEntityType.FOLDER:
-      classes += ' text-gray-400';
+      classes += ' text-gray-400 outline-gray-500 ';
+      classes += isSelected && ' bg-white ';
       content = <FontAwesomeIcon icon={faFolder as IconProp} size="lg" />;
       break;
   }
 
-  return <div className={classNames(classes, isSelected && 'border')}>{content}</div>;
+  return <div className={classNames(classes, isSelected && 'outline outline-2')}>{content}</div>;
 };
 
 export default ItemLogo;

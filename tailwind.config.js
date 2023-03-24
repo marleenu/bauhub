@@ -5,10 +5,10 @@ module.exports = {
     fontFamily: {
       sans: ['Lato', 'sans-serif']
     },
-    fontSize: {
-      tiny: '.5rem',
-      xs: '.8125rem',
-      base: '.875rem'
+    extend: {
+      backgroundSize: {
+        'size-200': '200% 200%'
+      }
     }
   },
   plugins: []

@@ -4,8 +4,9 @@ import React, { FC, useEffect } from 'react';
 import Breadcrumbs from './components/Breadcrumbs';
 import DeleteButton from './components/DeleteButton';
 import { fetchFilesAsync, selectFileCount } from './slices/fileSlice';
-import { useAppDispatch, useAppSelector } from './app/hooks';
+import { useAppDispatch, useAppSelector } from './app/hooks/hooks';
 import FileListFallback from './components/FileListFallback';
+import Sidebar from './components/Sidebar';
 
 const App: FC = () => {
   const fileCount = useAppSelector(selectFileCount);
@@ -18,11 +19,14 @@ const App: FC = () => {
   const fileListEmpty = fileCount === 0;
 
   return (
-    <div className="mt-8 justify-center xl:mx-96 lg:mx-44 md:mx-24 mx-0 sm:mx-8">
-      <Breadcrumbs />
-      <DeleteButton />
-      {fileListEmpty && <FileListFallback />}
-      {!fileListEmpty && <Table />}
+    <div className="flex h-screen">
+      <Sidebar />
+      <div className="mt-8 min-w-0 w-full justify-center xl:mx-24 lg:mx-16 md:mx-8 mx-0">
+        <Breadcrumbs />
+        <DeleteButton />
+        {fileListEmpty && <FileListFallback />}
+        {!fileListEmpty && <Table />}
+      </div>
     </div>
   );
 };

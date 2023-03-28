@@ -9,7 +9,6 @@ import { IFileEntity } from '../models/IFileEntity';
 import { RootState } from '../app/store';
 import { deleteFile, fetchFiles } from '../api/fileApi';
 import { StateStatus } from '../models/StateStatus';
-import { stat } from 'fs';
 import { DropResult } from 'react-beautiful-dnd';
 
 export const fileAdapter = createEntityAdapter<IFileEntity>({
@@ -81,6 +80,7 @@ export const fileSlice = createSlice({
       })
       .addCase(deleteFileAsync.fulfilled, (state, action) => {
         state.status = StateStatus.FULFILLED;
+        state.filter = state.filter.filter((id) => id !== action.payload.id);
         fileAdapter.removeOne(state, action.payload.id);
       });
   }

@@ -3,7 +3,7 @@ import { DragDropContext, Droppable, DropResult } from 'react-beautiful-dnd';
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import TableRowSkeleton from './TableRowSkeleton';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
 import { handleFileOrdering, selectAllFiles, selectFileStateStatus } from '../../slices/fileSlice';
 import { StateStatus } from '../../models/StateStatus';
 
@@ -15,7 +15,7 @@ const Table: FC = () => {
   if (!files) return null;
 
   const onDragEnd = (result: DropResult) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
     if (!destination) return;
 
     if (destination.droppableId === source.droppableId && destination.index === source.index) {

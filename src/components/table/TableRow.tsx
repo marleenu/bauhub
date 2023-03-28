@@ -6,11 +6,11 @@ import { FileEntityType } from '../../models/FileEntityType';
 import { classNames, formatDate } from '../../utils/utilities';
 import { Draggable } from 'react-beautiful-dnd';
 import ContainerStatusIndicator from '../ContainerStatusIndicator';
-import ItemLogo from '../icons/ItemLogo';
+import ItemIcon from '../icons/ItemIcon';
 import DnDHandler from './DnDHandler';
 import { selectIsFileSelected, toggleSelected } from '../../slices/fileSlice';
 import { RootState } from '../../app/store';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
 
 interface Props {
   item: IFile | IFolder | IContainer;
@@ -44,7 +44,7 @@ const TableRow: FC<Props> = ({ item, index }) => {
               />
             </td>
             <td className="w-1/12">
-              <ItemLogo item={item} isSelected={isFileSelected} />
+              <ItemIcon item={item} isSelected={isFileSelected} />
             </td>
             <td className="w-1/3"> {item.name} </td>
             <td className="w-1/6 text-center">

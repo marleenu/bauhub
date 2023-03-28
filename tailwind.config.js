@@ -7,7 +7,8 @@ module.exports = {
     },
     extend: {
       backgroundSize: {
-        'size-200': '200% 200%'
+        'size-200': '200% 200%',
+        'size-400': '400% 400%'
       }
     }
   },

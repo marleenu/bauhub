@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ITableHeaderArray } from '../../models/ITableHeaderArray';
 import { selectIsMasterCheckboxSelected, toggleMasterCheckbox } from '../../slices/fileSlice';
-import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { useAppDispatch, useAppSelector } from '../../app/hooks/hooks';
 
 const TableHeader: FC = () => {
   const isMasterCheckboxChecked = useAppSelector(selectIsMasterCheckboxSelected);
@@ -33,7 +33,7 @@ const TableHeader: FC = () => {
 
   return (
     <thead>
-      <tr>
+      <tr className="border-b">
         {tableHeaderData.map((th) => {
           return (
             <th key={th.id} className={th?.classes || ''}>

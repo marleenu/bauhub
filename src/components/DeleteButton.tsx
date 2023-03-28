@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { useAppDispatch, useAppSelector } from '../app/hooks/hooks';
 import { deleteFileAsync, selectSelectedFileIds } from '../slices/fileSlice';
 import { classNames } from '../utils/utilities';
 

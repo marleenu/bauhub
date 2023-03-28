@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import PrimaryButton from './PrimaryButton';
-import { useAppDispatch } from '../app/hooks';
+import { useAppDispatch } from '../app/hooks/hooks';
 import { fetchFilesAsync } from '../slices/fileSlice';
 
 const FileListFallback: FC = () => {

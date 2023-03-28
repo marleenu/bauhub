@@ -27,7 +27,7 @@ const ContainerStatusIndicator: FC<Props> = ({ container, isSelected }) => {
   }
 
   return (
-    <div>
+    <div className="w-full flex justify-center">
       <div className={classNames(isSelected && 'outline outline-white', classes)}>
         <FontAwesomeIcon icon={icon as IconProp} /> {container.signedBy}/{container.totalSigners}
       </div>

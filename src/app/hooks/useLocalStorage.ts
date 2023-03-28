@@ -14,7 +14,7 @@ export const useLocalStorage = (key: string, defaultValue: string | boolean | nu
   useEffect(() => {
     const rawValue = JSON.stringify(value);
     localStorage.setItem(key, rawValue);
-  }, []);
+  }, [key, value]);
 
   return [value, setValue];
 };
